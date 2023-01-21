@@ -1,6 +1,6 @@
 # Apify SDK legacy
 
-Package for Crawlee that should allows to import and use packages, that are using older version of Apify SDK.
+Package for [Crawlee](https://github.com/apify/crawlee) that should allows to import and use packages, that are using older version of Apify SDK.
 
 ## Installation
 
