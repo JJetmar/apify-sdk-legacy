@@ -1,5 +1,5 @@
 {
-    "name": "ts-template",
+    "name": "apify-sdk-legacy",
     "version": "1.0.0",
     "description": "TypeScript templates for new projects.",
     "main": "index.js",
@@ -13,13 +13,16 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/JJetmar/ts-template/issues"
     },
     "homepage": "https://github.com/JJetmar/ts-template#readme",
+    "peerDependencies": {
+        "apify": "*"
+    },
     "devDependencies": {
-        "@types/jest": "^28.1.6",
+        "@types/jest": "^29.2.6",
         "jest": "^28.1.3",
         "ts-jest": "^28.0.7",
         "typescript": "^4.7.4"
