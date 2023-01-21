@@ -1,7 +1,7 @@
 {
     "name": "apify-sdk-legacy",
-    "version": "1.0.0",
-    "description": "TypeScript templates for new projects.",
+    "version": "1.0.1",
+    "description": "Package for Crawlee that should allows to import and use packages, that are using older version of Apify SDK.",
     "main": "index.js",
     "scripts": {
         "test": "jest",
@@ -9,15 +9,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/JJetmar/ts-template.git"
+        "url": "git+https://github.com/JJetmar/apify-sdk-legacy.git"
     },
-    "keywords": [],
+    "keywords": ["web-scraping", "apify", "crawlee"],
     "author": "",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/JJetmar/ts-template/issues"
+        "url": "https://github.com/JJetmar/apify-sdk-legacy/issues"
     },
-    "homepage": "https://github.com/JJetmar/ts-template#readme",
+    "homepage": "https://github.com/JJetmar/apify-sdk-legacy#readme",
     "peerDependencies": {
         "apify": "*"
     },
