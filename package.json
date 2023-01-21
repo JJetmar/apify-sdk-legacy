@@ -1,8 +1,11 @@
 {
     "name": "apify-sdk-legacy",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Package for Crawlee that should allows to import and use packages, that are using older version of Apify SDK.",
-    "main": "index.js",
+    "main": "./dist/index.js",
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "test": "jest",
         "build": "tsc"
