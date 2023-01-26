@@ -17,7 +17,11 @@ import { apifyGoogleAuth } from 'apify-google-auth'; // package using Apify SDK 
 import 'apify-sdk-legacy';
 ```
 
-## Development
-Most of the information related to the backward compatibility maybe found at [Upgrading to v3](https://sdk.apify.com/docs/upgrading/upgrading-to-v3).
+## Tested libraries
+- [apify-google-auth](https://github.com/metalwarrior665/apify-google-auth)
 
+## Development
+Most of the information related to the backward compatibility may be found at [Upgrading to v3](https://sdk.apify.com/docs/upgrading/upgrading-to-v3).
+
+## Contribution
 New features are added on-the-go as needed, feel free to create pull-request with your own changes.
