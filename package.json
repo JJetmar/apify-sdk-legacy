@@ -23,7 +23,8 @@
     },
     "homepage": "https://github.com/JJetmar/apify-sdk-legacy#readme",
     "peerDependencies": {
-        "apify": "*"
+        "apify": "*",
+        "crawlee": "*"
     },
     "devDependencies": {
         "@types/jest": "^29.2.6",
