@@ -10,11 +10,15 @@ jest.mock('apify', () => {
             getInput: jest.fn(),
             getValue: jest.fn(),
             isAtHome: jest.fn(),
+            main: jest.fn(),
+            newClient: jest.fn(),
             openKeyValueStore: jest.fn(),
             openDataset: jest.fn(),
             openRequestQueue: jest.fn(),
             pushData: jest.fn(),
             setValue: jest.fn(),
+
+            // Events
             on: jest.fn(),
             off: jest.fn(),
         }
@@ -32,15 +36,20 @@ jest.mock('crawlee', () => {
             },
             sleep: jest.fn()
         },
+        Session: jest.fn(),
+        BasicCrawler: jest.fn(),
+        CheerioCrawler: jest.fn(),
+        HttpCrawler: jest.fn(),
+        PlaywrightCrawler: jest.fn(),
         PuppeteerCrawler: jest.fn()
     }
 });
 
 import '../src/index';
-import Apify, { Actor } from "apify";
-import Crawlee from "crawlee";
+import Apify, { Actor } from 'apify';
+import Crawlee from 'crawlee';
 
-describe("Testing Apify legacy", () => {
+describe('Testing Apify legacy', () => {
 
     test("Calling Apify.call should call Actor.call", () => {
         Apify.call("actorName");
@@ -70,6 +79,16 @@ describe("Testing Apify legacy", () => {
     test("Calling Apify.isAtHome should call Actor.isAtHome", () => {
         Apify.isAtHome();
         expect(Apify.Actor.isAtHome).toBeCalledTimes(1);
+    });
+
+    test("Calling Apify.main should call Actor.main", () => {
+        Apify.main(() => {});
+        expect(Apify.Actor.main).toBeCalledTimes(1);
+    });
+
+    test("Calling Apify.newClient should call Actor.newClient", () => {
+        Apify.newClient();
+        expect(Apify.Actor.newClient).toBeCalledTimes(1);
     });
 
     test("Calling Apify.openDataset should call Actor.openDataset", () => {
@@ -118,8 +137,29 @@ describe("Testing Apify legacy", () => {
         expect(Actor.off).toBeCalledTimes(1);
     });
 
+    // Classes
+    test("Calling Apify.Session should call Crawlee.Session", () => {
+        new Apify.Session({});
+        expect(Crawlee.Session).toBeCalledTimes(1);
+    });
+
     // Crawlers
-    test("Calling Apify.PuppeteerCrawler.off should call Actor.off", () => {
+    test("Calling Apify.BasicCrawler should call Crawlee.BasicCrawler", () => {
+        new Apify.BasicCrawler();
+        expect(Crawlee.BasicCrawler).toBeCalledTimes(1);
+    });
+
+    test("Calling Apify.HttpCrawler should call Crawlee.HttpCrawler", () => {
+        new Apify.HttpCrawler();
+        expect(Crawlee.HttpCrawler).toBeCalledTimes(1);
+    });
+
+    test("Calling Apify.PlaywrightCrawler should call Crawlee.PlaywrightCrawler", () => {
+        new Apify.PlaywrightCrawler();
+        expect(Crawlee.PlaywrightCrawler).toBeCalledTimes(1);
+    });
+
+    test("Calling Apify.PuppeteerCrawler should call Crawlee.PuppeteerCrawler", () => {
         new Apify.PuppeteerCrawler();
         expect(Crawlee.PuppeteerCrawler).toBeCalledTimes(1);
     });

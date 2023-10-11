@@ -9,12 +9,17 @@ declare module 'apify' {
     export const getInput: typeof Actor.getInput;
     export const getValue: typeof Actor.getValue;
     export const isAtHome: typeof Actor.isAtHome;
+    export const main: typeof Actor.main;
+    export const newClient: typeof Actor.newClient;
     export const openDataset: typeof Actor.openDataset;
     export const openKeyValueStore: typeof Actor.openKeyValueStore;
     export const openRequestQueue: typeof Actor.openRequestQueue;
     export const pushData: typeof Actor.pushData;
     export const setValue: typeof Actor.setValue;
     export const utils: typeof Crawlee.utils;
+
+    // Classes
+    export const Session: typeof Crawlee.Session;
 
     // Events
     export const events: {
@@ -23,6 +28,10 @@ declare module 'apify' {
     }
 
     // Crawlers
+    export const BasicCrawler: typeof Crawlee.BasicCrawler;
+    export const CheerioCrawler: typeof Crawlee.CheerioCrawler;
+    export const HttpCrawler: typeof Crawlee.HttpCrawler;
+    export const PlaywrightCrawler: typeof Crawlee.PlaywrightCrawler;
     export const PuppeteerCrawler: typeof Crawlee.PuppeteerCrawler;
 }
 
@@ -35,12 +44,17 @@ Object.assign(Apify, {
     getInput: Actor.getInput,
     getValue: Actor.getValue,
     isAtHome: Actor.isAtHome,
+    main: Actor.main,
+    newClient: Actor.newClient,
     openDataset: Actor.openDataset,
     openKeyValueStore: Actor.openKeyValueStore,
     openRequestQueue: Actor.openRequestQueue,
     pushData: Actor.pushData,
     setValue: Actor.setValue,
     utils: Crawlee.utils,
+
+    // Classes
+    Session: Crawlee.Session,
 
     // Events
     events: {
@@ -49,5 +63,9 @@ Object.assign(Apify, {
     },
 
     // Crawlers
+    BasicCrawler: Crawlee.BasicCrawler,
+    CheerioCrawler: Crawlee.CheerioCrawler,
+    HttpCrawler: Crawlee.HttpCrawler,
+    PlaywrightCrawler: Crawlee.PlaywrightCrawler,
     PuppeteerCrawler: Crawlee.PuppeteerCrawler,
 });
